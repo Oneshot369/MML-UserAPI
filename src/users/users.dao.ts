@@ -6,6 +6,9 @@ import { userQueries } from './users.queries';
 export const readAllUsers = async () => {
     return execute<User[]>(userQueries.readAllUsers, []);
 };
+export const addUser = async (FirstName: string,LastName: string,Email: string,Username: string,Password: string) => {
+    return execute<User[]>(userQueries.addUser, [FirstName, LastName, Email, Username, Password]);
+};
 
 
 export const getMovies =async (userID: string) => {

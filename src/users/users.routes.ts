@@ -7,4 +7,8 @@ router
     .route('/users')
     .get(UserController.readUsers);
 
+router
+    .route('/addUser')
+    .post(UserController.addUser);
+
 export default router;
