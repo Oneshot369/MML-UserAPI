@@ -10,5 +10,9 @@ router
 router
     .route('/addUser')
     .post(UserController.addUser);
+router
+    .route('/addToList')
+    .post(UserController.addUser);
+
 
 export default router;

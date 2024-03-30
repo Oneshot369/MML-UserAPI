@@ -44,6 +44,29 @@ export const addUser: RequestHandler =async (req:Request, res: Response) =>
         });
     }
 }
+export const addToCart: RequestHandler =async (req:Request, res: Response) => 
+{
+    try{
+        let userID = req.body.userID
+        let movieID = req.body.movieID
+        let watchlist = req.body.watched
+        let rating = req.body.rating
+        //read all the users
+        let users = await UserDAO.addToUserList(userID, movieID, watchlist, rating);
+
+        //send the results back
+        res.status(200).json(
+            users
+        );
+    }
+    //catch error if something happens
+    catch(error){
+        console.error("users.controller|readUsers|ERROR", error);
+        res.status(500).json({
+            message:'there was an Error when reading all the Users'
+        });
+    }
+}
 
 async function getList(users: User[], res: Response<any, Record<string, any>>) 
 {

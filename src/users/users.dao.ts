@@ -18,16 +18,11 @@ export const getMovies =async (userID: string) => {
     ]);
 }
 
-export const addToList =async (userID: number, movieID: number) => {
-    return execute<OkPacket>(userQueries.addToCart, [
-       userID,
-       movieID
-    ]);
-}
-
-export const removeFromList =async (userID: number, movieID: number) => {
-    return execute<OkPacket>(userQueries.removeFromCart, [
+export function addToUserList(userID: any, movieID: any, watchlist: any, rating: any) {
+    return execute<Movie[]>(userQueries.addToCart, [
+        userID,
         movieID,
-        userID
+        watchlist,
+        rating 
     ]);
 }
