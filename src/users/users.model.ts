@@ -1,3 +1,4 @@
+import { Movie } from "./movies.model";
 
 export interface User{
     ID: number;
@@ -6,5 +7,5 @@ export interface User{
     Email: string;
     Username: string;
     Password: string;
-    List?: number[];
+    List?: Movie[];
 }

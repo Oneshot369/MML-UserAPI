@@ -2,6 +2,7 @@ import { OkPacket } from "mysql";
 import { execute } from "../services/mysql.connector";
 import { User } from "./users.model";
 import { userQueries } from './users.queries';
+import { Movie } from "./movies.model";
 
 export const readAllUsers = async () => {
     return execute<User[]>(userQueries.readAllUsers, []);
@@ -12,7 +13,7 @@ export const addUser = async (FirstName: string,LastName: string,Email: string,U
 
 
 export const getMovies =async (userID: string) => {
-    return execute<number[]>(userQueries.getCart, [
+    return execute<Movie[]>(userQueries.getCart, [
         userID 
     ]);
 }

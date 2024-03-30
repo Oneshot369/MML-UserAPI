@@ -51,6 +51,9 @@ async function getList(users: User[], res: Response<any, Record<string, any>>)
         try{
             console.log(users);
             const products = await UserDAO.getMovies(users[i].ID.toString());
+            console.log()
+            console.log("number", products);
+            console.log()
             users[i].List = products;
 
         } catch (error){
