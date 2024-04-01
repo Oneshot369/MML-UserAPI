@@ -14,5 +14,9 @@ router
     .route('/addToList')
     .post(UserController.addToCart);
 
+router
+    .route('/removeFromList/:id')
+    .delete(UserController.removeFromList);
+
 
 export default router;

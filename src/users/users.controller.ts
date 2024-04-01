@@ -88,14 +88,23 @@ async function getList(users: User[], res: Response<any, Record<string, any>>)
     }
 } 
 
-export const addToList: RequestHandler =async (req:Request, res: Response) => 
-{
-    //TODO
-}
 
 export const removeFromList: RequestHandler =async (req:Request, res: Response) => 
 {
-    //TODO
+    try{
+        //read all the users
+        let users = await UserDAO.removeFromList(req.params.id);
+
+        //send the results back
+        res.status(200).json(
+            users
+        );
+    }
+    //catch error if something happens
+    catch(error){
+        console.error("users.controller|readUsers|ERROR", error);
+        res.status(500).json({
+            message:'there was an Error when reading all the Users'
+        });
+    }
 }
-
-

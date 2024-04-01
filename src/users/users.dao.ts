@@ -26,3 +26,9 @@ export function addToUserList(userID: any, movieID: any, watchlist: any, rating:
         rating 
     ]);
 }
+export function removeFromList(ID: any) {
+    console.log("Here", ID)
+    return execute<Movie[]>(userQueries.removeFromCart, [
+        ID,
+    ]);
+}
