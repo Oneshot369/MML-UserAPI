@@ -12,7 +12,7 @@ router
     .post(UserController.addUser);
 router
     .route('/addToList')
-    .post(UserController.addUser);
+    .post(UserController.addToCart);
 
 
 export default router;

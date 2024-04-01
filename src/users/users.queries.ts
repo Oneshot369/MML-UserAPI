@@ -9,7 +9,7 @@ export const userQueries ={
         where users.users.ID = ?`,
         //todo
     addToCart:
-        "",
+        'insert into users.movie (UserID, MovieID, rating, watched) values (?,?,?,?)',
     removeFromCart:
         ""
 }
